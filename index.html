@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>通联存款</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css"></link>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/button.count.down.js"></script>
+    <script type="text/javascript" src="js/form.value.check.js"></script>
+    <script>
+    $(function() {
+        $("#submit").click(function() {
+            $('#dialogform').formValueCheck(function(){
+                alert('验证通过')
+            });
+        });
+
+        $('#bindbank').click(function(event) {
+            $(this).startCountDown(60)
+        });
+    });
+    </script>
+</head>
+<body>
+    <div class="" id="dialogform">
+        <div class="block-line">
+            <div class="block-title">
+                <span class="input-t">存款金额：</span>
+            </div>
+            <div class="block-content">
+                <span class="big-num-warp form-group">
+                    <input id="money" type="text" class="form-control big-num" placeholder="请输入存款金额" required  data-message="金额不能为空"/>
+                </span>
+                <span class="yuan">元</span>
+            </div>
+        </div>
+        <div class="block-line">
+            <div class="block-title">
+                <span class="input-t">交易密码：</span>
+            </div>
+            <div class="block-content">
+                <span class="big-num-warp form-group">
+                    <input class="form-control big-num" id="paypassword" type="password" autocomplete="off" required>
+                </span>
+            </div>
+        </div>
+        <div class="block-line">
+            <div class="block-title">
+                <span class="input-t">短信验证码：</span>
+            </div>
+            <div class="block-content">
+                <span class="big-num-warp form-group">
+                    <input class="form-control big-num" id="paypassword" type="password" autocomplete="off" required>
+                </span>
+                <span class="btn-inl-warp">
+                    <button class="btn btn-success btn-sm" id="bindbank">通联绑定</button>
+                </span>
+            </div>
+        </div>
+        <div class="block-line">
+            <div class="block-content">
+                <button class="btn btn-success btn-lg" id="submit">提交</button>
+                <button class="btn btn-success btn-lg" id="reset">重置</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
